@@ -1,4 +1,6 @@
 import { Scene, Engine, Vector3, MeshBuilder, HemisphericLight, FreeCamera } from '@babylonjs/core'
+import '@babylonjs/inspector'
+import "@babylonjs/core/Debug/debugLayer";
 
 export class BasicScene {
 
@@ -12,7 +14,19 @@ export class BasicScene {
         window.addEventListener("resize", () => {
             this.engine.resize();
         });
-        
+
+        // hide/show the Inspector
+        window.addEventListener("keydown", (ev) => {
+            // Shift+Ctrl+Alt+I
+            if (ev.shiftKey && ev.ctrlKey && ev.altKey && ev.keyCode === 73) {
+                if (this.scene.debugLayer.isVisible()) {
+                    this.scene.debugLayer.hide();
+                } else {
+                    this.scene.debugLayer.show();
+                }
+            }
+        });
+
         this.engine.runRenderLoop(() => {
             this.scene.render();
         });
