@@ -15,10 +15,11 @@ export default defineComponent({
 </script>
 
 <style>
-head, body, div, canvas {
+html, body, div, canvas {
+  padding: 0;
+  margin: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
   overflow: hidden;
 }
 </style>
