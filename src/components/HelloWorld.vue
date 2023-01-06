@@ -1,6 +1,6 @@
 <template>
   <div>
-    <canvas></canvas>
+    <canvas id="bjsCanvas"></canvas>
   </div>
 </template>
 
@@ -20,9 +20,8 @@ export default defineComponent({
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-#canvas {
+<style>
+#bjsCanvas {
   width: 100%;
   height: 100%;
 }
