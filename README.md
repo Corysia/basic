@@ -1,13 +1,10 @@
+# Basic - A Simple BabylonJS Example with TypesScript
 
-- [A Simple BabylonJS Example with TypesScript](#a-simple-babylonjs-example-with-typesscript)
+- [Basic - A Simple BabylonJS Example with TypesScript](#basic---a-simple-babylonjs-example-with-typesscript)
   - [How to build](#how-to-build)
     - [Software Requirements](#software-requirements)
     - [Install dependencies](#install-dependencies)
     - [Build](#build)
-
-# A Simple BabylonJS Example with TypesScript
-
-This is a simple example of BabylonJS with TypesScript.
 
 You can see the result [here](https://corysia.github.com/basic).
 
@@ -31,7 +28,9 @@ npm install
 ```bash
 npm run build
 ```
+
 or
+
 ```bash
-npm run serve
+npm run dev
 ```
