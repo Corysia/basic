@@ -1,18 +1,14 @@
 #!/usr/bin/env sh
 
-PROJECT_NAME=`cat package.json | grep name | awk -F '"' '{print $4}'`
+PROJECT_NAME=$(cat package.json | grep name | awk -F '"' '{print $4}')
 # abort on errors
 set -e
-
-if ! [ -x "$(command -v npm)" ]; then
-    echo 'Error: npm is not installed.' >&2
-    exit 1
-fi
-
-# clean
-npm run clean
-# navigate into the build output directory
+# navigate up one directory
 cd ../
-tar -czf "$PROJECT_NAME".tar.gz "$PROJECT_NAME"
+# clean up any old archives
+rm -f "$PROJECT_NAME".tar.gz "$PROJECT_NAME".tar
+# create a tarball of the project excluding the dist, node_modules, and .git directories
+tar --exclude="$PROJECT_NAME/dist" --exclude="$PROJECT_NAME/node_modules" --exclude="$PROJECT_NAME/.git" --exclude="$PROJECT_NAME/.vscode" --exclude="$PROJECT_NAME/.DS_Store" -czf "$PROJECT_NAME".tar.gz "$PROJECT_NAME"
+# move the tarball into the project directory
 mv "$PROJECT_NAME".tar.gz "$PROJECT_NAME"
 cd -
