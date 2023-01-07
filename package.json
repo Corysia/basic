@@ -10,7 +10,10 @@
     "start": "webpack serve --open --config webpack.config.dev.js",
     "dev": "webpack --config webpack.config.dev.js",
     "prod": "webpack --config webpack.config.js",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "clean": "rm -rf dist node_modules",
+    "publish": "npm run clean && npm install && npm run deploy",
+    "archive": "sh archive.sh"
   },
   "author": "",
   "license": "ISC",

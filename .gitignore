@@ -5,6 +5,10 @@ node_modules
 # Custom deploy script
 deploy.sh
 
+# archives
+*.tar
+*.tar.gz
+
 # local env files
 .env.local
 .env.*.local
