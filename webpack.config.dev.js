@@ -36,5 +36,5 @@ module.exports = {
             template: path.resolve(appDirectory, "public/index.html"), //path to the html file
         })
     ],
-    mode: "production", //tells webpack to run in production mode
+    mode: "development", //tells webpack to run in development mode
 };

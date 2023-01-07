@@ -1,12 +1,15 @@
 {
-  "name": "foo",
+  "name": "basic",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --port 8080",
+    "serve": "webpack-dev-server --port 8080",
+    "start": "webpack serve --open --config webpack.config.dev.js",
+    "dev": "webpack --config webpack.config.dev.js",
+    "prod": "webpack --config webpack.config.js",
     "deploy": "sh deploy.sh"
   },
   "author": "",
