@@ -13,7 +13,7 @@ module.exports = {
         extensions: [".tsx", ".ts", ".js"], //extensions that webpack will look for
     },
     devServer: {
-        host: "0.0.0.0", //allows us to access the server from other devices on the network
+        host: "localhost", //allows us to access the server from other devices on the network
         port: 8080, //port that we're using for local host (localhost:8080)
         static: path.resolve(appDirectory, "public"), //tells webpack to serve from the public folder
         hot: true, //allows us to update the page without refreshing
