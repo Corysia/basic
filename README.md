@@ -6,7 +6,7 @@
     - [Install dependencies](#install-dependencies)
     - [Build](#build)
 
-You can see the result [here](https://corysia.github.com/basic).
+You can see the result [here](https://corysia.github.io/basic).
 
 ## How to build
 
