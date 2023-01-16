@@ -42,7 +42,7 @@ module.exports = {
         }),        
         new CopyPlugin({
             patterns: [
-                { from: "resources" },
+                { from: "resources", noErrorOnMissing: true },
             ],
         }),
     ],
