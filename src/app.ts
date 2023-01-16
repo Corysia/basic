@@ -28,6 +28,7 @@ class App {
         // hide/show the Inspector
         window.addEventListener("keydown", (ev) => {
             // Shift+Ctrl+Alt+I
+            // keyCode 73 = I, need to use this because ev.key === "I" doesn't work on a Mac
             if (ev.shiftKey && ev.ctrlKey && ev.altKey && ev.keyCode === 73) {
                 if (scene.debugLayer.isVisible()) {
                     scene.debugLayer.hide();

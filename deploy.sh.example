@@ -3,7 +3,7 @@
 # from https://medium.com/swlh/deploy-vue-app-to-github-pages-2ada48d7397e
 # GIT Username
 GIT_USER="your_username"
-PROJECT_NAME=`cat package.json | grep name | awk -F '"' '{print $4}'`
+PROJECT_NAME=$(cat package.json | grep name | awk -F '"' '{print $4}')
 # abort on errors
 set -e
 

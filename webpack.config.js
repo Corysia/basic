@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const appDirectory = fs.realpathSync(process.cwd());
 
 module.exports = {
@@ -28,13 +29,22 @@ module.exports = {
                 use: "ts-loader", //tells webpack to use ts-loader to compile .ts files
                 exclude: /node_modules/, //tells webpack to ignore node_modules
             },
+            {
+                test: /\.(gif|png|jpe?g)$/i,
+                type: 'asset/resource',
+            }
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             inject: true, //injects the js file into the html file
-            template: path.resolve(appDirectory, "public/index.html"), //path to the html file
-        })
+            template: path.resolve(appDirectory, "src/index.html"), //path to the html file
+        }),        
+        new CopyPlugin({
+            patterns: [
+                { from: "resources" },
+            ],
+        }),
     ],
     mode: "production", //tells webpack to run in production mode
 };
