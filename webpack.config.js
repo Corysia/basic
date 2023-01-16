@@ -13,15 +13,6 @@ module.exports = {
     resolve: {
         extensions: [".tsx", ".ts", ".js"], //extensions that webpack will look for
     },
-    devServer: {
-        host: "localhost", //allows us to access the server from other devices on the network
-        port: 8080, //port that we're using for local host (localhost:8080)
-        static: path.resolve(appDirectory, "public"), //tells webpack to serve from the public folder
-        hot: true, //allows us to update the page without refreshing
-        devMiddleware: {
-            publicPath: "/", //tells webpack to serve from the root directory
-        }
-    },
     module: {
         rules: [
             {

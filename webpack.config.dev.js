@@ -15,7 +15,7 @@ module.exports = {
     devServer: {
         host: "0.0.0.0", //allows us to access the server from other devices on the network
         port: 8080, //port that we're using for local host (localhost:8080)
-        static: path.resolve(appDirectory, "public"), //tells webpack to serve from the public folder
+        static: path.resolve(appDirectory, "resources"), //tells webpack to serve from the public folder
         hot: true, //allows us to update the page without refreshing
         devMiddleware: {
             publicPath: "/", //tells webpack to serve from the root directory
@@ -33,7 +33,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: true, //injects the js file into the html file
-            template: path.resolve(appDirectory, "public/index.html"), //path to the html file
+            template: path.resolve(appDirectory, "src/index.html"), //path to the html file
         })
     ],
     mode: "development", //tells webpack to run in development mode
